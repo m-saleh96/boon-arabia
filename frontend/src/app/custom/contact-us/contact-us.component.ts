@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { RegisterService } from '../services/register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact-us',
@@ -30,7 +30,7 @@ export class ContactUsComponent {
       if (res.message === "success") {
         this.errors = [];
         this.registerForm.reset();
-        alert(res.message);
+        this.router.navigate(['/payment']);
       }
 
     },(error)=>{
